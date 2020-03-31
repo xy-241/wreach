@@ -1,0 +1,22 @@
+* {
+	box-sizing: border-box;
+	color: #333;
+}
+
+body {
+	background-color: #555;
+	background-image: url(Resources/jupiter-01.png);
+	margin: 0;
+	font-family: "Arial", sans-serif, Geneva, Verdana, monospace;
+}
+
+header > a,
+#root > div > h1 {
+	display: inline-block;
+	background-image: url(Resources/WrenchWhite.png);
+	background-size: cover;
+	width: 279px;
+	height: 76px;
+	overflow: hidden;
+	text-indent: -9999px;
+}
