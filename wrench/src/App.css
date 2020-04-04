@@ -11,6 +11,24 @@
   text-align: center;
 }
 
+/* user panel */
+#userPanel {
+  color: white;
+  background-color: #333;
+  width: 25%;
+  height: 100px;
+  margin: 0 0 1em 0;
+}
+#userImage {
+  border-radius: 120px;
+  border: 5px solid black;
+  float: left;
+  width: 100px;
+  height: 100px;
+  background-color: #555;
+  margin: 0 1.5em 0 0;
+}
+
 .navButtons {
   color: white;
   background-color: #565856;
