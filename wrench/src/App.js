@@ -13,7 +13,7 @@ let userPanel = (username) => {
 };
 //nav
 function openNav() {
-  document.getElementById("nav").style.width = "100%";
+  document.getElementById("nav").style.width = "25%";
 }
 
 function closeNav() {
