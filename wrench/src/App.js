@@ -24,9 +24,9 @@ function closeNav() {
 }
 
 let navLink = (iclass, text, destination) => {
-  return React.createElement("div", { class: "navlink" }, [
-    React.createElement("i", { class: "iclass" }),
-    React.createElement("a", { href: destination }, text),
+  return React.createElement("a", { class: "navlink", href: destination }, [
+    React.createElement("i", { class: iclass }),
+    text,
   ]);
 };
 let nav = () => {
