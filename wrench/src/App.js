@@ -1,8 +1,13 @@
 import React from "react";
 import "./App.css";
+// import { render } from "react-dom";
 
 //globals
 let username = "John Doe";
+let state = "home";
+//login, home, repair, status, workshops, payment, settings
+// eslint-ignore-next-line
+let content;
 
 let userPanel = (username) => {
   return React.createElement("div", { id: "userPanel" }, [
@@ -23,11 +28,49 @@ function closeNav() {
   document.getElementById("nav").style.width = "0%";
 }
 
-let navLink = (iclass, text, destination) => {
-  return React.createElement("a", { class: "navlink", href: destination }, [
-    React.createElement("i", { class: iclass }),
-    text,
+let tempPage = (header, p1) => {
+  return React.createElement("div", { id: "content" }, [
+    React.createElement("header", {}, header),
+    React.createElement("p", {}, p1),
   ]);
+};
+
+let renderContent = (state) => {
+  // let content;
+  if (state === "login") {
+    //after database implementation
+    //this is only temporary, ill change this to proper state based ui -S
+    content = 1;
+  }
+  if (state === "home") {
+    content = tempPage("Home", "Welcome, " + username);
+  }
+  if (state === "repair") {
+    content = tempPage("Repair", "repair page");
+  }
+  if (state === "workshop") {
+    content = tempPage("Workshops", "workshop page");
+  }
+  if (state === "payment") {
+    content = tempPage("Payment", "payment page");
+  }
+  if (state === "settings") {
+    content = tempPage("Settings", "settings page");
+  }
+  return content ? content : tempPage("Error", "An error has occured");
+};
+
+let navLink = (iclass, text, destination) => {
+  return React.createElement(
+    "a",
+    // eslint-disable-next-line
+    {
+      class: "navlink",
+      // eslint-disable-next-line
+      href: "javascript:console.log(" + 0 + ");",
+    },
+    [React.createElement("i", { class: iclass }), text]
+  );
 };
 let nav = () => {
   return React.createElement("div", { id: "nav", class: "overlay" }, [
@@ -38,7 +81,7 @@ let nav = () => {
           closeNav();
         },
         // eslint-disable-next-line
-        href: "javascript:void(0)",
+        href: "#",
       },
       "x"
     ),
@@ -72,6 +115,7 @@ let App = () => {
       },
       React.createElement("i", { class: "fas fa-bars" })
     ),
+    renderContent(state),
   ]);
 };
 
