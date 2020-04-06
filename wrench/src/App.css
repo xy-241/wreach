@@ -30,6 +30,12 @@
   margin: 0 1.5em 0 0;
 }
 
+/* nav */
+.navlink {
+  display: flex;
+  justify-content: space-between;
+}
+
 /* overlay */
 .overlay {
   height: 100%;
