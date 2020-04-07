@@ -21,7 +21,6 @@
 .cache/
 dist/
 .vscode/
-.eslintrc.json
 .prettierrc
 
 npm-debug.log*
