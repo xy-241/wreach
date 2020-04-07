@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-// import { render } from "react-dom";
 
 //globals
 let username = "John Doe";
