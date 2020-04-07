@@ -68,6 +68,12 @@ let navLink = ({ iclass, text, destination }) => {
     },
     [React.createElement("i", { class: iclass }), text]
   );
+  // return (
+  //   <a class="navlink" src={destination}>
+  //     <i class={iclass}></i>
+  //     {text}
+  //   </a>
+  // );
 };
 let nav = () => {
   return React.createElement("div", { id: "nav", class: "overlay" }, [
