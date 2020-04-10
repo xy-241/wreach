@@ -3,7 +3,7 @@ import "./App.css";
 
 //globals
 let username = "John Doe";
-let state = "home";
+let state = "login";
 //login, home, repair, status, workshops, payment, settings
 // eslint-ignore-next-line
 let content;
@@ -34,12 +34,52 @@ let tempPage = (header, p1) => {
   ]);
 };
 
+
+////////erin's changes
+let tempLoginPage = () => {
+  return React.createElement("center", { id: "logincontent" }, [
+    React.createElement("div", null, /*#__PURE__*/React.createElement("input", {
+      type: "text",
+      id: "username",
+      placeholder: "USERNAME"
+    })),
+    React.createElement("div", null, /*#__PURE__*/React.createElement("input", {
+      type: "text",
+      id: "password",
+      placeholder: "PASSWORD"
+    })),
+    React.createElement("button", {
+      onclick: "myFunction()",
+      id: "loginbtn"
+    }, "LOG IN"),
+    React.createElement("a", {
+      href: "http://www.google.com",
+      id: "forgotlink"
+    }, "Forgot password?"),
+    React.createElement("div", {
+      id: "signuptext"
+    }, /*#__PURE__*/React.createElement("p", null, "Don't have an account? ", /*#__PURE__*/React.createElement("a", {
+      href: "google.com",
+      id: "signuplink"
+    }, "Sign up")))
+  ]);
+};
+
+////////
+
+
+
+
+
+
+
 let renderContent = (state) => {
   // let content;
   if (state === "login") {
     //after database implementation
     //this is only temporary, ill change this to proper state based ui -S
-    content = 1;
+    //content = 1;
+    content = tempLoginPage();
   }
   if (state === "home") {
     content = tempPage("Home", "Welcome, " + username);
