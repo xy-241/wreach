@@ -1,8 +1,8 @@
 import react from "react";
+import user from "./userAccount";
 
-//globals
-let username = "John Doe";
-let userid = "F4E7B6AEF6";
+let username = user.username;
+let userid = user.userid;
 
 let userPanel = () => {
   return react.createElement("div", { id: "userPanel" }, [
