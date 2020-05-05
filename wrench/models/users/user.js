@@ -2,7 +2,7 @@ const mogoose = require("mongoose");
 
 let Schema = mongoose.Schema;
 
-const userSchema = new schema({
+const userSchema = new Schema({
   username: {
     type: String,
     minLength: 5,
