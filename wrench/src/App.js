@@ -1,6 +1,7 @@
 import React from "react";
 import navigation from "./components/navigation";
 import userPanel from "./components/userPanel";
+import assignmentDisplay from "./components/assignment";
 import "./App.css";
 
 ////////erin's changes
@@ -88,6 +89,7 @@ let App = () => {
       React.createElement("i", { class: "fas fa-bars" })
     ),
     tempLoginPage(),
+    assignmentDisplay(),
   ]);
 };
 

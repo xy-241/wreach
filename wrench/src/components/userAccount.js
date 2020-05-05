@@ -1,17 +1,6 @@
+import Account from "./Account";
 let md5 = require("md5");
 //not really using this for production just testing something -s
-
-class Account {
-  constructor(username, password, description) {
-    this.username = username;
-    this.userid = undefined;
-    this.password = password;
-    this.description = description;
-    this.passwordHash = md5(password);
-  }
-  updatePassword(current, newPass, newPassConfirm) {}
-  userPreferences = {};
-}
 
 //account helpers
 function generateId(cluster) {
