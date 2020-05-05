@@ -12,23 +12,24 @@ class Account {
   userPreferences = {};
 }
 
-class userAccount {
-  constructor(username, password, description, type = "user") {
-    Account.call(this, username, password, description);
-    this.type = type;
-  }
-}
-class specialistAccount {
-  constructor(username, password, description, type = "specialist") {
-    Account.call(this, username, password, description);
-    this.type = type;
-  }
-}
-class adminAccount {
-  constructor(username, password, description, type = "admin") {
-    Account.call(this, username, password, description);
-    this.type = type;
-  }
-}
+// class userAccount {
+//   constructor(username, password, description, type = "user") {
+//     Account.call(this, username, password, description);
+//     this.type = type;
+//   }
+// }
+// class specialistAccount {
+//   constructor(username, password, description, type = "specialist") {
+//     Account.call(this, username, password, description);
+//     this.type = type;
+//     this.assignments = [];
+//   }
+// }
+// class adminAccount {
+//   constructor(username, password, description, type = "admin") {
+//     Account.call(this, username, password, description);
+//     this.type = type;
+//   }
+// }
 
 export default Account;

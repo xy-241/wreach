@@ -2,6 +2,7 @@ import React from "react";
 import navigation from "./components/navigation";
 import userPanel from "./components/userPanel";
 import assignmentDisplay from "./components/assignment";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
 
 ////////erin's changes
@@ -92,5 +93,87 @@ let App = () => {
     assignmentDisplay(),
   ]);
 };
+
+function testRouting() {
+  return React.createElement("Router", null, [
+    React.createElement("div", null, [
+      React.createElement("ul", null, [
+        React.createElement(
+          "li",
+          null,
+          React.createElement("Link", { to: "/" }, "Home")
+        ),
+        React.createElement(
+          "li",
+          null,
+          React.createElement("Link", { to: "/repair" }, "Repair")
+        ),
+        React.createElement(
+          "li",
+          null,
+          React.createElement("Link", { to: "/workshops" }, "Workshops")
+        ),
+      ]),
+      React.createElement("Switch", null, [
+        React.createElement(
+          "Route",
+          { "exact path": "/" },
+          React.createElement("Home")
+        ),
+        React.createElement(
+          "Route",
+          { path: "/repair" },
+          React.createElement("Repair")
+        ),
+        React.createElement(
+          "Route",
+          { path: "/workshops" },
+          React.createElement("Workshops")
+        ),
+        React.createElement(
+          "Route",
+          { path: "/user" },
+          React.createElement("User")
+        ),
+        // React.createElement(
+        //   "Route",
+        //   { path: `/user/${[user]}` },
+        //   React.createElement("User", ("user" = user), [])
+        // ),
+      ]),
+    ]),
+  ]);
+}
+
+function Home() {
+  return React.createElement(
+    "div",
+    null,
+    React.createElement("h2", null, "Home")
+  );
+}
+function Repair() {
+  return React.createElement(
+    "div",
+    null,
+    React.createElement("h2", null, "Repair")
+  );
+}
+
+function Workshops() {
+  return React.createElement(
+    "div",
+    null,
+    React.createElement("h2", null, "Workshops")
+  );
+}
+
+function User(user) {
+  return React.createElement(
+    "div",
+    null,
+    React.createElement("h2", null, `Welcome ${user}`)
+  );
+}
 
 export default App;
