@@ -94,53 +94,64 @@ let App = () => {
   ]);
 };
 
+function routenavlist() {
+  return [
+    React.createElement(
+      "li",
+      null,
+      React.createElement("Link", { to: "/" }, "Home")
+    ),
+    React.createElement(
+      "li",
+      null,
+      React.createElement("Link", { to: "/repair" }, "Repair")
+    ),
+    React.createElement(
+      "li",
+      null,
+      React.createElement("Link", { to: "/workshops" }, "Workshops")
+    ),
+    React.createElement(
+      "li",
+      null,
+      React.createElement("Link", { to: "/user" }, "User")
+    ),
+  ];
+}
+function routeswitchlist() {
+  return React.createElement("Switch", null, [
+    React.createElement(
+      "Route",
+      { "exact path": "/" },
+      React.createElement("Home")
+    ),
+    React.createElement(
+      "Route",
+      { path: "/repair" },
+      React.createElement("Repair")
+    ),
+    React.createElement(
+      "Route",
+      { path: "/workshops" },
+      React.createElement("Workshops")
+    ),
+    React.createElement(
+      "Route",
+      { path: "/user" },
+      React.createElement("User")
+    ),
+    // React.createElement(
+    //   "Route",
+    //   { path: `/user/${[user]}` },
+    //   React.createElement("User", ("user" = user), [])
+    // ),
+  ]);
+}
 function testRouting() {
   return React.createElement("Router", null, [
     React.createElement("div", null, [
-      React.createElement("ul", null, [
-        React.createElement(
-          "li",
-          null,
-          React.createElement("Link", { to: "/" }, "Home")
-        ),
-        React.createElement(
-          "li",
-          null,
-          React.createElement("Link", { to: "/repair" }, "Repair")
-        ),
-        React.createElement(
-          "li",
-          null,
-          React.createElement("Link", { to: "/workshops" }, "Workshops")
-        ),
-      ]),
-      React.createElement("Switch", null, [
-        React.createElement(
-          "Route",
-          { "exact path": "/" },
-          React.createElement("Home")
-        ),
-        React.createElement(
-          "Route",
-          { path: "/repair" },
-          React.createElement("Repair")
-        ),
-        React.createElement(
-          "Route",
-          { path: "/workshops" },
-          React.createElement("Workshops")
-        ),
-        React.createElement(
-          "Route",
-          { path: "/user" },
-          React.createElement("User")
-        ),
-        // React.createElement(
-        //   "Route",
-        //   { path: `/user/${[user]}` },
-        //   React.createElement("User", ("user" = user), [])
-        // ),
-      ]),
+      React.createElement("ul", null, [routenavlist()]),
+      routeswitchlist(),
     ]),
   ]);
 }

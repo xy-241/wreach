@@ -25,11 +25,16 @@ let placeholderUser = {
 placeholderUser.userid = generateId();
 
 let accounts = {};
-function createAccount(username, password, description) {
+function createAccount(username, password) {
   let account;
-  account = new Account(username, password, description);
+  account = new Account(username, password);
   account.userid = generateId();
   accounts[username] = account;
+}
+//I will rewrite this part, leave it as is for now -s
+function writeDescription(account, description) {
+  let accx = new Account(account.username, account.password);
+  accx.description = description;
 }
 
 function login(username, password) {

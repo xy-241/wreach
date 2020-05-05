@@ -1,14 +1,22 @@
 let md5 = require("md5");
 
 class Account {
-  constructor(username, password, description) {
+  constructor(username, password) {
     this.username = username;
     this.userid = undefined;
     // this.password = password;
-    this.description = description;
+    this.description = undefined;
     this.passwordHash = md5(password);
   }
-  updatePassword(current, newPass, newPassConfirm) {}
+  updatePassword(current, passwords) {
+    if (passwords[0] === passwords[1]) {
+      return 1;
+    }
+    throw "Password mismatch exception";
+  }
+  setDescription(desc) {
+    this.description = desc;
+  }
   userPreferences = {};
 }
 

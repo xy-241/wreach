@@ -1,9 +1,9 @@
 import react from "react";
 
-function genericPage(title, content, additionalParams = {}) {
+function genericPage(page, additionalParams) {
   return react.createElement("div", additionalParams, [
-    react.createElement("h2", null, title),
-    react.createElement("p", null, content),
+    react.createElement("h2", null, page.title),
+    react.createElement("p", null, page.content),
   ]);
 }
 

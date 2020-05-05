@@ -4,14 +4,18 @@ import react from "react";
 //individual assignments created by regular users, accepted by specialist users and can be fully modified by admin users
 
 class Assignment {
-  constructor(title, description, createdBy) {
+  constructor(title, description) {
     this.title = title;
     this.description = description;
-    this.createdBy = createdBy;
     this.solved = false;
   }
   edit() {}
   del() {}
+}
+
+function createAssignment(assignment, createdBy) {
+  let assignx = new Assignment(assignment.title, assignment.description);
+  assignx.createdBy = createdBy;
 }
 
 //pushes an example assignment
@@ -22,11 +26,12 @@ let assignment0 = new Assignment(
 );
 
 let assignmentDisplay = function (assignment = assignment0) {
-  return react.createElement("div", { class: "assignmentItem" }, [
-    react.createElement("h2", null, assignment.title),
-    react.createElement("p", null, assignment.description),
-    react.createElement("p", null, `- ${assignment0.createdBy.username}`),
-  ]);
+  // return react.createElement("div", { class: "assignmentItem" }, [
+  //   react.createElement("h2", null, assignment.title),
+  //   react.createElement("p", null, assignment.description),
+  //   react.createElement("p", null, `- ${assignment.createdBy.username}`),
+  // ]);
+  //TODO: fix this
 };
 
 export default assignmentDisplay;
