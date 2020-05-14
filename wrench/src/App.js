@@ -70,9 +70,11 @@ let tempLoginPage = () => {
 
 ////////
 
-let logo = React.createElement("div", { id: "logo" }, [
-  React.createElement("img", { src: "resources/wrenchBlack.png" }),
-]);
+let logo = (
+  <div id="logo">
+    <img src="resources/wrenchBlack.png"></img>
+  </div>
+)
 
 let App = () => {
   return React.createElement("div", {}, [
@@ -95,65 +97,34 @@ let App = () => {
 };
 
 function routenavlist() {
-  return [
-    React.createElement(
-      "li",
-      null,
-      React.createElement("Link", { to: "/" }, "Home")
-    ),
-    React.createElement(
-      "li",
-      null,
-      React.createElement("Link", { to: "/repair" }, "Repair")
-    ),
-    React.createElement(
-      "li",
-      null,
-      React.createElement("Link", { to: "/workshops" }, "Workshops")
-    ),
-    React.createElement(
-      "li",
-      null,
-      React.createElement("Link", { to: "/user" }, "User")
-    ),
-  ];
+  return ([
+    <li to="/">Home</li>,
+    <li to="/repair">Repair</li>,
+    <li to="/workshops">Workshops</li>,
+    <li to="/user">User</li>
+  ])
 }
 function routeswitchlist() {
-  return React.createElement("Switch", null, [
-    React.createElement(
-      "Route",
-      { "exact path": "/" },
-      React.createElement("Home")
-    ),
-    React.createElement(
-      "Route",
-      { path: "/repair" },
-      React.createElement("Repair")
-    ),
-    React.createElement(
-      "Route",
-      { path: "/workshops" },
-      React.createElement("Workshops")
-    ),
-    React.createElement(
-      "Route",
-      { path: "/user" },
-      React.createElement("User")
-    ),
-    // React.createElement(
-    //   "Route",
-    //   { path: `/user/${[user]}` },
-    //   React.createElement("User", ("user" = user), [])
-    // ),
-  ]);
+  return (
+    <Switch>
+      <Route exact path="/">Home</Route>
+      <Route path="/repair">Repair</Route>
+      <Route path="/workshops">Workshops</Route>
+      <Route path="/user">User</Route>
+    </Switch>
+  )
 }
 function testRouting() {
-  return React.createElement("Router", null, [
-    React.createElement("div", null, [
-      React.createElement("ul", null, [routenavlist()]),
-      routeswitchlist(),
-    ]),
-  ]);
+  return (
+    <Router>
+      <div>
+        <ul>
+          <routenavlist />
+          <routeswitchlist />
+        </ul>
+      </div>
+    </Router>
+  )
 }
 
 function Home() {
