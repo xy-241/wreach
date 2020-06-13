@@ -74,7 +74,7 @@ let logo = (
   <div id="logo">
     <img src="resources/wrenchBlack.png"></img>
   </div>
-)
+);
 
 let App = () => {
   return React.createElement("div", {}, [
@@ -97,22 +97,24 @@ let App = () => {
 };
 
 function routenavlist() {
-  return ([
+  return [
     <li to="/">Home</li>,
     <li to="/repair">Repair</li>,
     <li to="/workshops">Workshops</li>,
-    <li to="/user">User</li>
-  ])
+    <li to="/user">User</li>,
+  ];
 }
 function routeswitchlist() {
   return (
     <Switch>
-      <Route exact path="/">Home</Route>
+      <Route exact path="/">
+        Home
+      </Route>
       <Route path="/repair">Repair</Route>
       <Route path="/workshops">Workshops</Route>
       <Route path="/user">User</Route>
     </Switch>
-  )
+  );
 }
 function testRouting() {
   return (
@@ -124,7 +126,7 @@ function testRouting() {
         </ul>
       </div>
     </Router>
-  )
+  );
 }
 
 function Home() {
